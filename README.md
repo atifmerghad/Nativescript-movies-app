@@ -1,6 +1,4 @@
-# Movies Demo
-
-> 🎬 Demo for [Nativescript Angular Speed Code Youtube Series](https://www.youtube.com/playlist?list=PL44i_PSsr5XyxSt5hzJazPw8HMaVcesVu)
+# Movies App
 
 [![Nativescript](https://img.shields.io/badge/Nativescript-8-blue.svg?style=for-the-badge)]()
 [![Angular](https://img.shields.io/badge/Angular-11-red.svg?style=for-the-badge)]()

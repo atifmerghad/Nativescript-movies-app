@@ -1,0 +1,47 @@
+<GridLayout rows="auto,*">
+    <!-- header -->
+    <ContentView row="0">
+        <ns-header [headerTitle]="(staticText$ | async)?.mainHeaderTitle || 'ACCOUNT'" hasMenuButton="true"></ns-header>
+    </ContentView>
+
+    <GridLayout row="1" rows="auto,auto,*,auto">
+        <StackLayout row="0" verticalAlignment="center">
+            <Image width="54" height="54" borderRadius="50"
+                src="https://www.adobe.com/express/create/media_141efea30cca217e8cb7fb3abb8ed9d663c29d550.jpeg?width=2000&format=webply&optimize=medium">
+            </Image>
+            <Label class=" m-12" fontWeight="600" text="Oliver Queen" textAlignment="center"></Label>
+            <Label class=" m-12" text="oliver.queen@gmail.com" textAlignment="center"></Label>
+        </StackLayout>
+
+        <FlexboxLayout row="1" flexDirection="column" marginTop="16">
+
+            <FlexboxLayout flexDirection="column" *ngFor="let menu of mainMenu" margin="8 16"
+                style="background: #F7F7F7; border-radius:6;">
+                <GridLayout columns="auto,*,auto" rows="auto" *ngFor="let item of menu.items" padding="10"
+                    verticalAlignment="center" (tap)="navigateTo(item)">
+                    <Image [col]="isRtl?'2':'0'" width="24" height="24" [src]="'~/assets/images/'+item.icon">
+                    </Image>
+                    <Label col="1" class=" m-12" fontWeight="600" [text]="item.name"></Label>
+                    <Image [col]="isRtl?'0':'2'" src="~/assets/images/arrow-{{isRtl?'left':'right'}}.png" (tap)="back()"
+                        width="24" height="24"></Image>
+                </GridLayout>
+            </FlexboxLayout>
+
+        </FlexboxLayout>
+
+        <StackLayout row="2">
+
+        </StackLayout>
+
+
+        <StackLayout row="3" verticalAlignment="bottom" verticalAlignment="center" margin="16">
+            <GridLayout [columns]="isRtl?'*,auto':'auto,*'" rows="auto" style="background:  #F7F7F7; border-radius:6;"
+                margin="5 0 5 0" padding="10 5" verticalAlignment="center">
+                <Image [col]="isRtl?'1':'0'" width="24" height="24" src="~/assets/images/user.png"></Image>
+                <Label [col]="isRtl?'0':'1'" fontWeight="600" class=" m-12" text="{{ 'dashboard.dashboard_profile_logOut' | L}}
+                                " (tap)="logOut()"></Label>
+
+            </GridLayout>
+        </StackLayout>
+    </GridLayout>
+</GridLayout>

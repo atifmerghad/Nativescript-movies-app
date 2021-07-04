@@ -1,0 +1,33 @@
+{
+    "app.name": "M-Box",
+    "ios.info.plist": {
+        "NSLocationWhenInUseUsageDescription": "This will be added to InfoPlist.strings"
+    },
+    "user": {
+        "name": "أسمك",
+        "email": "user.email"
+    },
+    "array": [
+        "split the translation into ",
+        "multiples lines"
+    ],
+    "sprintf": "format me %s",
+    "placeholders": "format me %2$s one more time %1$s",
+    "shared": {
+        "lang": "اللغة",
+        "language": "English",
+        "welcome": "مرحبا بك\n في متجرنا ",
+        "hint": "أدخل أسمك",
+        "getGrocery": "احصل على البقالة الخاصة بك في غضون ساعة واحدة",
+        "getStarted": "إبدأ الآن"
+    },
+    "dashboard": {
+        "dashboard_profile_paymentMethods": "طرق الدفع",
+        "dashboard_profile_accountInformation": "معلومات الحساب",
+        "dashboard_profile_notifications": "إشعارات",
+        "dashboard_profile_inviteFriend": "دعوة الأصدقاء",
+        "dashboard_profile_settings": "إعدادات",
+        "dashboard_profile_termsOfServices": "شروط الخدمة",
+        "dashboard_profile_logOut": "تسجيل الخروج"
+    }
+}

@@ -1,0 +1,30 @@
+.ns-root {
+  /* Colors */
+  --color-primary: #ee3322;
+  --color-bg-default: #fefefe;
+  --color-bg-gray: #444;
+
+  --color-text-on-primary: #fefefe;
+  --color-text-default: #444;
+  --color-text-gray: #444;
+
+  /* Spacing */
+  --spacing-xl: 30;
+  --spacing-l: 15;
+  --spacing-m: 10;
+  --spacing-s: 5;
+
+  /* Border Radius */
+  --border-radius-l: 15;
+  --border-radius-m: 30;
+  --border-radius-s: 0;
+
+  /* Font */
+  --font-size-h1: 25;
+  --font-size-h2: 20;
+  --font-size-h3: 18;
+
+  /* Shadows */
+  --box-shadow-default: 0;
+  --text-shadow-default: 0;
+}

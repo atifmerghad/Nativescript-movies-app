@@ -1,0 +1,257 @@
+/* Fonts */
+
+* {
+  font-family: Almarai, Almarai-Regular;
+}
+
+.fa {
+  font-family: FontAwesome, fontawesome-webfont;
+}
+
+.ionicons {
+  font-family: Ionicons, ionicons;
+}
+
+.bold {
+  font-family: "Poppins Bold", "Poppins-Bold";
+  font-weight: 700;
+}
+
+.medium {
+  font-family: "Poppins Medium", "Poppins-Medium";
+  font-weight: 500;
+}
+
+.regular {
+  font-family: "Poppins Regular", "Poppins-Regular";
+  font-weight: 400;
+}
+
+.light {
+  font-family: "Poppins Light", "Poppins-Light";
+  font-weight: 300;
+}
+
+.ion-alert:before {
+  content: "\f101";
+}
+
+.ns-root {
+  /* Colors */
+  --color-primary: #65adf1;
+  --color-bg-default: #fefefe;
+  --color-bg-gray: #444;
+
+  --color-text-on-primary: #fefefe;
+  --color-text-default: #393838;
+  --color-text-gray: #444;
+
+  /* Spacing */
+  --spacing-xl: 25;
+  --spacing-l: 15;
+  --spacing-m: 10;
+  --spacing-s: 5;
+
+  /* Border Radius */
+  --border-radius-l: 15;
+  --border-radius-m: 10;
+  --border-radius-s: 5;
+
+  /* Font */
+  --font-size-h1: 25;
+  --font-size-h2: 20;
+  --font-size-h3: 18;
+
+  /* Shadows */
+  --box-shadow-default: 0 0 5px rgba(0, 0, 0, 0.8);
+  --text-shadow-default: 1px 1px 1px rgba(101, 173, 241, 0.8);
+}
+
+/* Spacing */
+.p-xl {
+  padding: var(--spacing-xl);
+}
+.p-l {
+  padding: var(--spacing-l);
+}
+.p-m {
+  padding: var(--spacing-m);
+}
+.p-s {
+  padding: var(--spacing-s);
+}
+
+.m-xl {
+  margin: var(--spacing-xl);
+}
+.m-l {
+  margin: var(--spacing-l);
+}
+.m-m {
+  margin: var(--spacing-m);
+}
+.m-s {
+  margin: var(--spacing-s);
+}
+.m-x-l {
+  margin-left: var(--spacing-l);
+  margin-right: var(--spacing-l);
+}
+.m-x-m {
+  margin-left: var(--spacing-m);
+  margin-right: var(--spacing-m);
+}
+.m-x-s {
+  margin-left: var(--spacing-s);
+  margin-right: var(--spacing-s);
+}
+.m-t-xl {
+  margin-top: var(--spacing-xl);
+}
+.m-t-l {
+  margin-top: var(--spacing-l);
+}
+.m-t-m {
+  margin-top: var(--spacing-m);
+}
+.m-t-s {
+  margin-top: var(--spacing-s);
+}
+.m-b-xl {
+  margin-bottom: var(--spacing-xl);
+}
+.m-b-l {
+  margin-bottom: var(--spacing-l);
+}
+.m-b-m {
+  margin-bottom: var(--spacing-m);
+}
+.m-b-s {
+  margin-bottom: var(--spacing-s);
+}
+
+/* Font */
+.font-size-h1 {
+  font-size: var(--font-size-h1);
+}
+
+.font-size-h2 {
+  font-size: var(--font-size-h2);
+}
+
+.font-size-h3 {
+  font-size: var(--font-size-h3);
+}
+
+/* Button */
+.button-primary {
+  font-size: var(--font-size-h3);
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  padding: var(--spacing-l);
+  border-radius: var(--border-radius-m);
+  text-transform: none;
+}
+
+.button-text {
+  font-size: var(--font-size-h3);
+  color: var(--color-text-gray);
+  padding: var(--spacing-l);
+  text-transform: none;
+  background-color: transparent;
+  border-width: 0;
+  background-color: transparent;
+  z-index: 0;
+}
+
+Page {
+  background-color: var(--color-bg-default);
+}
+
+label,
+TextField {
+  color: var(--color-text-default);
+  font-family: "Poppins Regular", Poppins-Regular;
+  font-weight: 400;
+}
+
+.text-color-primary {
+  color: var(--color-primary);
+}
+
+.text-color-light {
+  color: var(--color-bg-default);
+}
+
+.text-color-gray {
+  color: var(--color-text-gray);
+}
+
+.bg-color-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-color-default {
+  background-color: var(--color-bg-default);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+  border-width: 1;
+}
+
+.border-light {
+  border-color: var(--color-bg-default);
+  border-width: 1;
+}
+
+.border-b-primary {
+  border-bottom-color: var(--color-primary);
+  border-bottom-width: 1;
+}
+
+.border-t-gray {
+  border-top-color: var(--color-bg-gray) var(--color-text-gray);
+  border-top-width: 1;
+}
+
+.border-radius-l {
+  border-radius: var(--border-radius-l);
+}
+.border-radius-m {
+  border-radius: var(--border-radius-m);
+}
+.border-radius-s {
+  border-radius: var(--border-radius-s);
+}
+
+.glow-shadow {
+  box-shadow: var(--box-shadow-default);
+}
+
+.title {
+  text-shadow: var(--text-shadow-default);
+}
+
+/* alignments */
+.text-center {
+  text-align: center;
+}
+
+.v-center {
+  vertical-align: center;
+}
+.v-top {
+  vertical-align: top;
+}
+.v-bottom {
+  vertical-align: bottom;
+}
+
+.h-center {
+  horizontal-align: center;
+}
+
+* {
+  font-family: Almarai, Almarai-Regular;
+}

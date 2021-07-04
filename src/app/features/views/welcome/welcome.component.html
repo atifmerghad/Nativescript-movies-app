@@ -1,0 +1,27 @@
+<GridLayout height="100%">
+    <Carousel #myCarousel debug="true" height="100%" width="100%" color="white" pageChanged="myChangeEvent"
+        pageTapped="mySelectedEvent" indicatorOffset="100,100" indicatorColor="#FFFFFF" finite="true" bounce="false"
+        showIndicator="true" verticalAlignment="top" android:indicatorAnimation="WORM">
+
+        <CarouselItem id="slide1" verticalAlignment="middle" *ngFor="let item of carouselItems "
+            backgroundImage="{{item.image}}" backgroundRepeat="no-repeat" backgroundSize="cover">
+
+            <label color="#000" [text]="isRtl?item.title_ar:item.title" textWrap="true" textAlignment="center"
+                fontWeight="600" margin="30"></label>
+            <label color="#000" [text]="isRtl?item.subTitle_ar:item.subTitle" textWrap="true" textAlignment="center"
+                margin="30"></label>
+        </CarouselItem>
+
+
+
+    </Carousel>
+    <!--
+        <Button [col]="isRtl?'2':'0'" text="Skip " class="btn btn-default" (tap)="skipPages()"
+            verticalAlignment="bottom"></Button>
+        <Button [col]="isRtl?'0':'2'" text="Next" class="btn btn-primary" (tap)="nextPage()"
+            verticalAlignment="bottom"></Button>
+    -->
+    <Button colSpan="3" text="SIGN IN" class="button-primary" margin="12" (tap)="nextPage()"
+        verticalAlignment="bottom"></Button>
+
+</GridLayout>

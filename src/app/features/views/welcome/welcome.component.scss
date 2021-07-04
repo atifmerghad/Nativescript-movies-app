@@ -1,0 +1,39 @@
+@import "~/app";
+
+.color-section {
+  background-color: $blue;
+}
+
+.blue {
+  color: $blue;
+}
+
+#slide1 {
+  background-color: #f45c43;
+  vertical-align: center;
+}
+
+.slide1 {
+  background-color: #f45c43;
+  vertical-align: center;
+}
+
+#slide2 {
+  background-color: #1d976c;
+  vertical-align: center;
+}
+
+#slide3 {
+  background-color: #e5e5be;
+  vertical-align: center;
+}
+
+#slide4 {
+  background-color: #003973;
+  vertical-align: center;
+}
+
+.carousel-layout-fix {
+  padding: 0.1 0;
+  margin: -0.1 0;
+}

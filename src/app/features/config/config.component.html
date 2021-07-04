@@ -1,0 +1,73 @@
+<GridLayout rows="auto,*">
+
+    <ContentView row="0">
+        <ns-header [headerTitle]="(staticText$ | async)?.config?.title || 'SETTINGS'" hasMenuButton="true">
+        </ns-header>
+    </ContentView>
+    <GridLayout row="1" rows="auto,*,auto">
+        <StackLayout row="0" class="p-xl">
+            <!-- <Label [text]="(staticText$ | async)?.config?.description"></Label> -->
+
+            <!-- <Label
+                                                [text]="(staticText$ | async)?.config?.dataUrlTitle || 'Data URL'"
+                                                class="font-size-h2 medium m-t-xl"></Label>
+                                            <TextField
+                                                hint="https://raw.githubusercontent.com/..."
+                                                [(ngModel)]="dataUrl"
+                                                class="font-size-h3 p-s m-t-s border-b-primary"></TextField> -->
+
+            <Label [text]="(staticText$ | async)?.config?.stylingUrlTitle || 'Theme'"
+                class="font-size-h1 m-b-l"></Label>
+
+            <ng-container *ngIf="{ selected: (stylingUrl$ | async), options: (styleOptions$ | async)} as styles">
+                <WrapLayout>
+                    <ng-container *ngFor="let styleOption of styles.options">
+                        <GridLayout rows="*,auto,auto" height="105" width="82" borderRadius="5" margin="0 12 12 0"
+                            horizontalAlignment="center"
+                            [backgroundColor]="((!displayCustomStyleTextfield && styles.selected === styleOption?.styleUrl))?'#009ad6':'#00afaa'"
+                            (tap)="updateStylingUrl(styleOption?.styleUrl)">
+                            <Label textWrap="true" row="1" [text]="styleOption?.displayName"
+                                class="font-size-h3 p-s m-t-s"
+                                [class.bold]="!displayCustomStyleTextfield && styles.selected === styleOption?.styleUrl"></Label>
+                            <!--<Label row="2"
+                                                                    *ngIf="!displayCustomStyleTextfield && styles.selected === styleOption?.styleUrl"
+                                                                    col="1" class="ionicons font-size-h1 text-color-primary" [text]="icon.check"></Label>
+                                                                -->
+                        </GridLayout>
+                    </ng-container>
+                </WrapLayout>
+                <GridLayout columns="*, 50">
+                    <Label text="Custom" (tap)="toggleCustomStyle()" class="font-size-h3 p-s m-t-s"
+                        [class.bold]="displayCustomStyleTextfield"></Label>
+                    <Label *ngIf="displayCustomStyleTextfield" col="1" class="ionicons font-size-h1 text-color-primary"
+                        [text]="icon.check"></Label>
+                </GridLayout>
+            </ng-container>
+
+            <ng-container *ngIf="displayCustomStyleTextfield">
+                <TextField hint="https://raw.githubusercontent.com/..." [(ngModel)]="stylingUrl"
+                    class="font-size-h3 p-s m-t-s border-b-primary"></TextField>
+
+                <Button [text]="(staticText$ | async)?.config?.buttons?.update || 'UPDATE'" (tap)="updateUrls()"
+                    class="button-primary medium m-t-xl"></Button>
+            </ng-container>
+
+            <Label [text]="(staticText$ | async)?.config?.stylingUrlTitle || 'Language'"
+                class="font-size-h1 m-b-l"></Label>
+            <GridLayout rows="auto,auto,auto">
+                <Label row="0" text="Arabic"></Label>
+                <Label row="1" text="English"></Label>
+                <Label row="2" text="Frensh"></Label>
+            </GridLayout>
+
+        </StackLayout>
+        <StackLayout row="1">
+
+        </StackLayout>
+        <GridLayout row="2" columns="auto,*,auto" class="p-xl">
+            <Label col="0" [text]="(staticText$ | async)?.config?.stylingUrlTitle || 'Version'"
+                class="font-size-h1 m-b-l"></Label>
+            <Label col="2" [text]="(staticText$ | async)?.config?.stylingUrlTitle || '1.0'"></Label>
+        </GridLayout>
+    </GridLayout>
+</GridLayout>

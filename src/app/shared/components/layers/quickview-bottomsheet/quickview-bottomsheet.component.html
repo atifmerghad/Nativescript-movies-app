@@ -1,0 +1,32 @@
+<GridLayout
+    (tap)="navigateToProductDetails()"
+    verticalAlignment="bottom"
+    padding="20"
+    rows="auto, auto"
+    columns="auto, *"
+    class="bg-color-default"
+    borderRadius="15 15 0 0">
+    
+    <ng-container *ngIf="productDetails$ | async as productDetails">
+        <ContentView row="0" col="0">
+            <ns-thumbnail-card [imageSrc]="productDetails.image.thumbnail"></ns-thumbnail-card>
+        </ContentView>
+        <StackLayout row="0" col="1" padding="10 10 15 10">
+            <Label [text]="productDetails.title" fontSize="30" class="bold" textWrap="true"></Label>
+            <Label [text]="productDetails.description.substring(0, 90) + '...'" textWrap="true" fontSize="18" class="text-color-gray"></Label>
+        </StackLayout>
+    </ng-container>
+
+    <GridLayout
+        row="1"
+        col="0"
+        colSpan="2"
+        rows="auto"
+        columns="auto, *"
+        class="m-t-l border-t-gray"
+        padding="10 5 0 5">
+        <Label col="0" [text]="icons.info" fontSize="20" marginRight="5" class="ionicons text-color-gray"></Label>
+        <Label col="1" text="Details and More" fontSize="18" class="text-color-gray"></Label>
+    </GridLayout>
+
+</GridLayout>

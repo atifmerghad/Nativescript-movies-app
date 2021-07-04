@@ -1,0 +1,57 @@
+<GridLayout
+    verticalAlignment="top"
+    [height]="ios ? 60 : 82"
+    row="0"
+    rows="*"
+    columns="60, *, auto, *, 60"
+    [padding]="ios ? '0' : '22 0 0'">
+    <ng-container *ngIf="hasBackButton">
+        <GridLayout
+            row="0"
+            col="0"
+            padding="10"
+            (tap)="back()">
+            <Label
+                verticalAlignment="center"
+                [text]="icons.back"
+                color="#fff"
+                fontSize="25"
+                class="ionicons title"></Label>
+        </GridLayout>
+    </ng-container>
+
+    <ng-container *ngIf="hasMenuButton">
+        <GridLayout
+            row="0"
+            col="0"
+            padding="10"
+            (tap)="openMenu()">
+            <Label
+                verticalAlignment="center"
+                [text]="icons.menu"
+                class="ionicons font-size-h1 text-color-gray"></Label>
+        </GridLayout>
+    </ng-container>
+
+    <ng-container *ngIf="rightActionButton">
+        <GridLayout
+            row="0"
+            col="4"
+            padding="10"
+            (tap)="rightActionButton.onTap()">
+            <Label
+                verticalAlignment="center"
+                [text]="rightActionButton.icon"
+                textAlignment="right"
+                class="ionicons font-size-h1 text-color-gray"></Label>
+        </GridLayout>
+    </ng-container>
+
+    <Label
+        row="0"
+        col="2"
+        verticalAlignment="center"
+        horizontalAlignment="center"
+        [text]="headerTitle | uppercase"
+        class="bold text-color-primary font-size-h2 title"></Label>
+</GridLayout>

@@ -1,0 +1,75 @@
+<GridLayout rows="auto, *">
+    <!-- header -->
+    <ContentView row="0">
+        <ns-header [headerTitle]="(staticText$ | async)?.mainHeaderTitle || 'MOVIES'" hasMenuButton="true"
+            [rightActionButton]="headerRightActionButton"></ns-header>
+    </ContentView>
+
+    <ScrollView row="1" height="100%" iosOverflowSafeAreaEnabled="false">
+        <StackLayout @slideUpFadeStagger>
+
+            <!-- featured -->
+            <ng-container *ngIf="featuredProduct$ | async as featured">
+                <GridLayout height="250" rows="*" columns="*" class="glow-shadow">
+                    <Image row="0" col="0" height="100%" width="100%" stretch="aspectFill" [src]="featured.image.cover">
+                    </Image>
+                    <!-- fade layer -->
+                    <ng-container *ngIf="featured.tinted">
+                        <ContentView backgroundColor="#666666" opacity="0.7" row="0" col="0" height="100%" width="100%">
+                        </ContentView>
+                    </ng-container>
+
+                    <!-- content -->
+                    <StackLayout row="0" col="0" verticalAlignment="bottom" horizontalAlignment="left" width="75%"
+                        padding="20">
+                        <Label [text]="featured.title | uppercase" class="bold" fontSize="20" color="#fff"></Label>
+                        <Label [text]="featured.description.slice(0,100) + '...'" fontSize="15" color="#ddd"
+                            marginTop="7" textWrap="true"></Label>
+
+                        <Button [text]="(staticText$ | async)?.home?.buttons?.heroCta || 'PLAY NOW'" marginTop="20"
+                            horizontalAlignment="left" class="bg-color-primary bold glow-shadow"
+                            [padding]="ios ? '15 0' : '5 0 0 0'" width="150" color="#fff" fontSize="14"
+                            (tap)="openAlertPopup()"></Button>
+                    </StackLayout>
+                </GridLayout>
+            </ng-container>
+
+            <!-- categories-->
+            <Label *ngIf="true" [text]="(staticText$ | async)?.sectionTitle?.categories || 'Categories'"
+                class="bold font-size-h3" margin="20 20 0 20"></Label>
+            <ng-container *ngIf="(categories$ | async) as categories">
+                <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false">
+                    <StackLayout orientation="horizontal" padding="10 20">
+                        <ng-container *ngFor="let category of categories">
+                            <GridLayout class="glow-shadow" height="80" width="160" rows="*" columns="*"
+                                marginRight="10">
+                                <Image [src]="category.image" stretch="aspectFill"></Image>
+                                <!-- mask -->
+                                <ng-container *ngIf="category.tinted">
+                                    <ContentView class="bg-color-primary" opacity="0.7"></ContentView>
+                                </ng-container>
+                                <Label [text]="category.displayName | uppercase"
+                                    class="v-center text-color-light bold text-center font-size-h3"></Label>
+
+                            </GridLayout>
+                        </ng-container>
+                    </StackLayout>
+                </ScrollView>
+            </ng-container>
+
+            <ng-container *ngFor="let group of productGroups$ | async">
+                <Label *ngIf="true" [text]="group.displayName" class="bold font-size-h3" margin="20 20 0 20"></Label>
+                <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false">
+                    <StackLayout orientation="horizontal" padding="10 20">
+                        <ng-container *ngFor="let product of group.products">
+                            <ContentView verticalAlignment="bottom" (tap)="openProductDetails(product.id)">
+                                <ns-thumbnail-card [imageSrc]="product.image.thumbnail"></ns-thumbnail-card>
+                            </ContentView>
+                        </ng-container>
+                    </StackLayout>
+                </ScrollView>
+            </ng-container>
+
+        </StackLayout>
+    </ScrollView>
+</GridLayout>

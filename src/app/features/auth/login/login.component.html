@@ -1,0 +1,74 @@
+<GridLayout rows="auto,*">
+    <GridLayout row="0">
+        <!-- header -->
+        <ContentView row="0">
+            <ns-header headerTitle="LOGIN" hasBackButton="true"></ns-header>
+        </ContentView>
+    </GridLayout>
+
+    <StackLayout row="1">
+        <!-- main content -->
+        <StackLayout padding="20">
+            <Label fontFamily="Almarai,Almarai-Regular" [textAlignment]="isRtl ? 'right' : 'left'"
+                text="{{'user.name' | L}}" class="bold text-center" fontSize="25"></Label>
+
+            <Label [textAlignment]="isRtl ? 'right' : 'left'" text="{{'user.name' | L}}"></Label>
+            <TextField [textAlignment]="isRtl?'right':'left'" hint="{{'shared.hint' | L}}"
+                class="font-size-h3 p-s m-t-s border-b-primary"></TextField>
+            <Label [textAlignment]="isRtl ? 'right' : 'left'" text="{{'user.name' | L}}"></Label>
+            <TextField [textAlignment]="isRtl?'right':'left'" hint="{{'shared.hint' | L}}"
+                class="font-size-h3 p-s m-t-s border-b-primary"></TextField>
+
+            <!-- categories 
+            <StackLayout orientation="horizontal" horizontalAlignment="center">
+                <ng-container>
+                    <Label text="gegge"></Label>
+                </ng-container>
+            </StackLayout>
+-->
+            <!-- some product stats 
+            <FlexboxLayout class="p-l m-t-l m-b-l" justifyContent="space-between">
+                <ng-container>
+                    <StackLayout>
+                        <ng-container>
+                            <Label class="font-size-h3 text-center" [text]="'item.key'"></Label>
+                            <Label class="font-size-h2 medium text-center" [text]="'item.value'"></Label>
+                        </ng-container>
+                    </StackLayout>
+                </ng-container>
+            </FlexboxLayout>
+-->
+            <!-- description -->
+            <ActivityIndicator color="blue" busy="true"></ActivityIndicator>
+
+            <Button row="1" height="44" text="Navigate" (tap)="navigate()" class="button-primary m-t-xl "></Button>
+            <Button row="1" height="44" text="Enable notification" (tap)="notification()"
+                class="button-primary m-t-xl "></Button>
+            <Button row="1" height="44" text="{{ 'shared.language' | L}}" (tap)="changeLanguage()"
+                class="button-primary m-t-xl "></Button>
+
+            <Button row="1" height="44" text="{{ 'shared.notification' | L}}" (tap)="message('hello atif')"
+                class="button-primary m-t-xl "></Button>
+
+        </StackLayout>
+        <GridLayout>
+            <Label [textAlignment]="isRtl ? 'right' : 'left'" text="{{ 'user.name' | L}}" class="h2 m-12"></Label>
+            <!--
+            <StackLayout>
+                <TextField class="form-control" hint="{{ 'auth.login_hint_username' | L}}"
+                    (textChange)="onUsernameChecked($event)" formControlName="username" keyboardType="email"
+                    [ngClass]="{ 'is-invalid': submitted && loginForm.controls['username'].hasError('required')  }">
+                </TextField>
+
+                <Label *ngIf="submitted && loginForm.controls['username'].hasError('required')" class="invalid-feedback"
+                    margin="0 16 0 16" [textAlignment]="isRtl?'left':'right'">
+                    <Span *ngIf="loginForm.controls['username'].hasError('required')"
+                        text="{{ 'auth.login_usernameRequired' | L}}"></Span>
+                </Label>
+
+            </StackLayout>
+        -->
+        </GridLayout>
+
+    </StackLayout>
+</GridLayout>

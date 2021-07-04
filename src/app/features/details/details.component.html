@@ -1,0 +1,79 @@
+<ScrollView>
+    <ng-container *ngIf="productDetails$ | async as productDetails">
+        <StackLayout>
+            <!-- hero -->
+            <GridLayout [height]="startVideo?'300':'250'" class="glow-shadow">
+                <GridLayout *ngIf="!startVideo" (tap)="openVideo(true)">
+                    <Image stretch="aspectFill" [src]="productDetails.image.cover" iosOverflowSafeArea="true"></Image>
+                    <ContentView iosOverflowSafeArea="true"
+                        background="linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.2))">
+                    </ContentView>
+
+                    <!-- giant play button -->
+                    <GridLayout verticalAlignment="center" horizontalAlignment="center" borderRadius="35" height="70"
+                        width="70" backgroundColor="rgba(255, 255, 255, 0.3)">
+                        <Label verticalAlignment="center" textAlignment="center" [text]="icons.play" fontSize="40"
+                            class="ionicons text-color-primary" marginLeft="5"></Label>
+                    </GridLayout>
+
+                </GridLayout>
+
+                <GridLayout *ngIf="startVideo" (tap)="openVideo(false)" height="300"
+                    [paddingTop]="startVideo?'50':'50'">
+                    <VideoPlayer [src]="productDetails.image.video" autoplay="true" height="300">
+                    </VideoPlayer>
+                </GridLayout>
+                <!-- header -->
+                <ns-header headerTitle="MOVIES" hasBackButton="true"></ns-header>
+            </GridLayout>
+
+
+            <StackLayout @slideUpFadeStagger>
+                <!-- main content -->
+                <StackLayout padding="20">
+                    <Label *ngIf="true" [text]="productDetails.title | uppercase" class="bold text-center"
+                        fontSize="25"></Label>
+
+                    <!-- categories -->
+                    <StackLayout *ngIf="true" orientation="horizontal" horizontalAlignment="center">
+                        <ng-container *ngFor="let category of productDetails.categories">
+                            <Label [text]="category | titlecase" class="medium" fontSize="15" opacity="0.8"
+                                margin="3"></Label>
+                        </ng-container>
+                    </StackLayout>
+
+                    <!-- some product stats -->
+                    <FlexboxLayout *ngIf="true" class="p-l m-t-l m-b-l" justifyContent="space-between">
+                        <ng-container *ngFor="let info of productDetails.keyInformation">
+                            <StackLayout>
+                                <ng-container *ngFor="let item of info | keyvalue">
+                                    <Label class="font-size-h3 text-center" [text]="item.key"></Label>
+                                    <Label class="font-size-h2 medium text-center" [text]="item.value"></Label>
+                                </ng-container>
+                            </StackLayout>
+                        </ng-container>
+                    </FlexboxLayout>
+
+                    <!-- description -->
+                    <Label *ngIf="true" textWrap="true" margin="5 20" [text]="productDetails.description"
+                        textAlignment="center" opacity="0.7"></Label>
+                </StackLayout>
+
+                <!-- related -->
+                <!-- <Label *ngIf="true" text="Related" margin="10 20 0 20" class="bold" fontSize="18"></Label> -->
+                <!-- <ng-container *ngIf="relatedMovies$ | async as movies">
+                    <ScrollView orientation="horizontal" height="168" scrollBarIndicatorVisible="false">
+                        <StackLayout orientation="horizontal" padding="10 20">
+                            <ng-container *ngFor="let movie of movies">
+                                <ContentView (tap)="navigateToProductDetails(movie.id)">
+                                    <ns-thumbnail-card [imageSrc]="movie.image.thumbnail"></ns-thumbnail-card>
+                                </ContentView>
+                            </ng-container>
+                        </StackLayout>
+                    </ScrollView>
+                </ng-container> -->
+            </StackLayout>
+        </StackLayout>
+    </ng-container>
+
+</ScrollView>

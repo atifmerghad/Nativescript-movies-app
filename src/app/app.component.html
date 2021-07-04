@@ -1,0 +1,25 @@
+<RootLayout class="bg-color-default">
+
+    <GridLayout columns="*,*" iosOverflowSafeArea="false">
+
+        <!-- menu -->
+        <ContentView col="0">
+            <ns-menu></ns-menu>
+        </ContentView>
+
+        <!-- nice decor -->
+        <GridLayout col="0" colSpan="2" [@mainContentShade]="(menuIsOpen$ | async) ? 'menuIsOpen' : 'menuIsClosed'"
+            [class.glow-shadow]="(menuIsOpen$ | async)">
+            <ContentView class="bg-color-primary"></ContentView>
+        </GridLayout>
+
+        <!-- main content -->
+        <GridLayout col="0" colSpan="2" [@mainContent]="(menuIsOpen$ | async) ? 'menuIsOpen' : 'menuIsClosed'"
+            [class.glow-shadow]="(menuIsOpen$ | async)">
+            <page-router-outlet></page-router-outlet>
+        </GridLayout>
+
+        <ns-alert-popup col="0" colSpan="2"></ns-alert-popup>
+
+    </GridLayout>
+</RootLayout>

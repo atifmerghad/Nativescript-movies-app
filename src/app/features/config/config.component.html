@@ -23,13 +23,14 @@
                 <WrapLayout>
                     <ng-container *ngFor="let styleOption of styles.options">
                         <GridLayout rows="*,auto,auto" height="105" width="82" borderRadius="5" margin="0 12 12 0"
-                            horizontalAlignment="center"
-                            [backgroundColor]="((!displayCustomStyleTextfield && styles.selected === styleOption?.styleUrl))?'#009ad6':'#00afaa'"
+                            horizontalAlignment="center" [backgroundImage]="styleOption.background"
                             (tap)="updateStylingUrl(styleOption?.styleUrl)">
+                            <Image src="https://data.energy.go.th/images/post_64/1587976383_1.jpg"></Image>
                             <Label textWrap="true" row="1" [text]="styleOption?.displayName"
                                 class="font-size-h3 p-s m-t-s"
                                 [class.bold]="!displayCustomStyleTextfield && styles.selected === styleOption?.styleUrl"></Label>
                             <!--<Label row="2"
+                                 [backgroundColor]="((!displayCustomStyleTextfield && styles.selected === styleOption?.styleUrl))?'#009ad6':'#00afaa'"
                                                                     *ngIf="!displayCustomStyleTextfield && styles.selected === styleOption?.styleUrl"
                                                                     col="1" class="ionicons font-size-h1 text-color-primary" [text]="icon.check"></Label>
                                                                 -->

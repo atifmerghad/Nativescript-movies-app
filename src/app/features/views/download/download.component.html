@@ -1,0 +1,13 @@
+<GridLayout rows="auto, *">
+    <!-- header -->
+    <ContentView row="0">
+        <ns-header [headerTitle]="(staticText$ | async)?.mainHeaderTitle || 'DOWNLOADS'" hasMenuButton="true">
+        </ns-header>
+    </ContentView>
+
+    <ScrollView row="1" height="100%" iosOverflowSafeAreaEnabled="false">
+        <StackLayout>
+            <Label text="Download"></Label>
+        </StackLayout>
+    </ScrollView>
+</GridLayout>

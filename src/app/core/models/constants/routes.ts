@@ -6,4 +6,8 @@ export const Routes = {
   auth_login_replicat: "/auth/login_replicat",
   auth_register: "/auth/register",
   auth_account: "/auth/account",
+
+  views_download: "/views/download",
+  views_help: "/views/help",
+
 };

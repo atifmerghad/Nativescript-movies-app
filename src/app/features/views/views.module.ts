@@ -4,6 +4,9 @@ import { SharedModule } from "@app/shared";
 import { NativeScriptCommonModule } from "@nativescript/angular";
 import { HomeRoutingModule } from "./views-routing.module";
 import { WelcomeComponent } from "./welcome/welcome.component";
+import { DownloadComponent } from "./download/download.component";
+import { HelpComponent } from "./help/help.component";
+
 
 @NgModule({
     imports: [
@@ -12,7 +15,7 @@ import { WelcomeComponent } from "./welcome/welcome.component";
         HomeRoutingModule,
         SharedModule,
     ],
-    declarations: [WelcomeComponent],
+    declarations: [WelcomeComponent, DownloadComponent, HelpComponent],
     schemas: [NO_ERRORS_SCHEMA],
 })
 export class ViewsModule { }

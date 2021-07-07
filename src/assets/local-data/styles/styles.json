@@ -2,27 +2,33 @@
     "styles": [
         {
             "displayName": "Default",
-            "styleUrl": "~/assets/local-data/styles/default.scss"
+            "background": "https://data.energy.go.th/images/post_64/1587976383_1.jpg",
+            "styleUrl": "https://raw.githubusercontent.com/atifmerghad/Nativescript-movies-app/main/src/assets/local-data/styles/default.scss"
         },
         {
             "displayName": "Airbnb",
-            "styleUrl": "~/assets/local-data/styles/airbnb.scss"
+            "background": "https://data.energy.go.th/images/post_64/1587976383_1.jpg",
+            "styleUrl": "https://raw.githubusercontent.com/atifmerghad/Nativescript-movies-app/main/src/assets/local-data/styles/airbnb.scss"
         },
         {
             "displayName": "Spotify",
-            "styleUrl": "~/assets/local-data/styles/spotify.scss"
+            "background": "https://data.energy.go.th/images/post_64/1587976383_1.jpg",
+            "styleUrl": "https://raw.githubusercontent.com/atifmerghad/Nativescript-movies-app/main/src/assets/local-data/styles/spotify.scss"
         },
         {
             "displayName": "Netflix",
-            "styleUrl": "~/assets/local-data/styles/netflix.scss"
+            "background": "https://data.energy.go.th/images/post_64/1587976383_1.jpg",
+            "styleUrl": "https://raw.githubusercontent.com/atifmerghad/Nativescript-movies-app/main/src/assets/local-data/styles/netflex.scss"
         },
         {
             "displayName": "Buzzfeed",
-            "styleUrl": "~/assets/local-data/styles/buzzfeed.scss"
+            "background": "https://data.energy.go.th/images/post_64/1587976383_1.jpg",
+            "styleUrl": "https://raw.githubusercontent.com/atifmerghad/Nativescript-movies-app/main/src/assets/local-data/styles/buzzfeed.scss"
         },
         {
             "displayName": "Dark",
-            "styleUrl": "~/assets/local-data/styles/dark.scss"
+            "background": "https://data.energy.go.th/images/post_64/1587976383_1.jpg",
+            "styleUrl": "https://raw.githubusercontent.com/atifmerghad/Nativescript-movies-app/main/src/assets/local-data/styles/dark.scss"
         }
     ]
 }

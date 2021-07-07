@@ -33,7 +33,14 @@ export class MenuComponent {
         this.closeMenu();
       }
     },
-    { displayName: "Downloads", icon: this.icons.downloads },
+    {
+      displayName: "Downloads",
+      icon: this.icons.downloads,
+      onTap: () => {
+        this.navigationService.navigate(Routes.views_download, null, true);
+        this.closeMenu();
+      }
+    },
     {
       displayName: "Settings",
       icon: this.icons.settings,
@@ -42,7 +49,14 @@ export class MenuComponent {
         this.closeMenu();
       },
     },
-    { displayName: "Help", icon: this.icons.help },
+    {
+      displayName: "Help",
+      icon: this.icons.help,
+      onTap: () => {
+        this.navigationService.navigate(Routes.views_help, null, true);
+        this.closeMenu();
+      }
+    },
   ];
   constructor(
     private layersService: LayersService,

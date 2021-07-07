@@ -1,0 +1,12 @@
+<GridLayout rows="auto, *">
+    <!-- header -->
+    <ContentView row="0">
+        <ns-header [headerTitle]="(staticText$ | async)?.mainHeaderTitle || 'HELP'" hasMenuButton="true"></ns-header>
+    </ContentView>
+
+    <ScrollView row="1" height="100%" iosOverflowSafeAreaEnabled="false">
+        <StackLayout>
+            <Label text="help"></Label>
+        </StackLayout>
+    </ScrollView>
+</GridLayout>

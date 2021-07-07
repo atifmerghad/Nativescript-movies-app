@@ -44,7 +44,7 @@ export class ApiService {
           responseType: "json",
         }
       )
-      .pipe(map((str) => (<any>str)?.styles));
+      .pipe(map((res) => (<any>res)?.styles));
 
   }
 

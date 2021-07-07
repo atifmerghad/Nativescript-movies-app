@@ -91,8 +91,6 @@ export class LoginComponent {
   }
 
 
-
-
   changeLanguage() {
     try {
       const deviceLang = ApplicationSettings.getString('__app__language__');

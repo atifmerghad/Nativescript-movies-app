@@ -1,3 +1,56 @@
+/* Variables */
+$primary: #fff;
+$accent: #384030;
+$secondary: #7b8055;
+$white: #fff;
+$blue: #364fd4;
+$gray: #f7f7f7;
+$dark-blue: #1e4489;
+$light-blue: #009ad6;
+$teal: #00afaa;
+$red: #e02020;
+
+$rtl-font-family: Almarai, Almarai-Regular;
+$ltr-font-family: Raleway-Regular, Raleway;
+
+/* Buttons */
+
+.btn {
+  color: white;
+  text-decoration: none;
+  padding: 5 10;
+  border-radius: 3;
+  font-size: 17;
+  text-align: center;
+}
+
+Button {
+  text-transform: none;
+  border-color: transparent;
+  min-width: 64;
+  height: 52;
+  padding: 0 5 0 5;
+  font-size: 14;
+}
+
+.btn-primary {
+  color: $white;
+  border-radius: 6;
+  font-weight: 600;
+  font-size: 17;
+  border: 1;
+  padding: 6;
+  background-color: $blue;
+  height: 44;
+  &.disabled {
+    background-color: $secondary;
+    pointer-events: none;
+  }
+  &:hover {
+    background-color: $light-blue;
+  }
+}
+
 /* Fonts */
 
 * {

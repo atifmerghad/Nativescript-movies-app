@@ -3,7 +3,7 @@ import { Page } from "@nativescript/core";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { Select, Store } from "@ngxs/store";
-import { Config, SlideUpFadeStagger, ConfigState, Icons } from "@app/core";
+import { Config, SlideUpFadeStagger, ConfigState, Icons, UtilsService } from "@app/core";
 
 @Component({
   moduleId: module.id,
@@ -21,7 +21,7 @@ export class ConfigComponent {
   icon = Icons;
 
   private _destroy$ = new Subject();
-  constructor(private page: Page, private store: Store) {
+  constructor(private page: Page, private store: Store, private utilsService: UtilsService) {
     this.page.actionBarHidden = true;
     this.store
       .select(ConfigState.dataUrl)
@@ -61,5 +61,12 @@ export class ConfigComponent {
       .then(() => {
         this.store.dispatch(new Config.UpdateStylingUrl(this.stylingUrl));
       });
+  }
+
+  changeLanguage(lang) {
+    this.utilsService.changeLanguage(lang);
+  }
+  enableNotification() {
+    this.utilsService.enableNotification();
   }
 }

@@ -56,9 +56,16 @@
             <Label [text]="(staticText$ | async)?.config?.stylingUrlTitle || 'Language'"
                 class="font-size-h1 m-b-l"></Label>
             <GridLayout rows="auto,auto,auto">
-                <Label row="0" text="Arabic"></Label>
-                <Label row="1" text="English"></Label>
-                <Label row="2" text="Frensh"></Label>
+                <Label row="0" text="Arabic" (tap)="changeLanguage('ar')"></Label>
+                <Label row="1" text="English" (tap)="changeLanguage('en')"></Label>
+                <Label row="2" text="Frensh" (tap)="changeLanguage('fr')"></Label>
+            </GridLayout>
+
+            <Label [text]="(staticText$ | async)?.config?.stylingUrlTitle || 'Notifications'"
+                class="font-size-h1 m-b-l"></Label>
+            <GridLayout rows="auto,auto,auto">
+                <Label row="0" text="Enable" (tap)="enableNotification()"></Label>
+
             </GridLayout>
 
         </StackLayout>

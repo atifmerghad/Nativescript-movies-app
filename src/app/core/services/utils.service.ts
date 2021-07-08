@@ -28,14 +28,15 @@ export class UtilsService {
     constructor(private page: Page, private layersService: LayersService, private navigationService: NavigationService, private routerExtensions: RouterExtensions) { }
 
 
-    changeLanguage(): void {
+    changeLanguage(lang): void {
         try {
-            const deviceLang = ApplicationSettings.getString('__app__language__');
-            const lang = (deviceLang == 'ar') ? 'en' : 'ar';
+
+            // const deviceLang = ApplicationSettings.getString('__app__language__');
+            // const lang = (deviceLang == 'ar') ? 'en' : 'ar';
             const localeOverriddenSuccessfully = overrideLocale(lang);
             setTimeout(() => {
-                this.navigationService.navigate(Routes.auth_login, { animated: false }, true);
-                this.navigationService.navigate(Routes.auth_login_replicat, { id: 1 }, false);
+                this.navigationService.navigate(Routes.home, { animated: false }, true);
+                //this.navigationService.navigate(Routes.auth_login_replicat, { id: 1 }, false);
             }, 2000)
         }
         catch (e) {
@@ -43,7 +44,7 @@ export class UtilsService {
         }
     }
 
-    static enableNotification(): void {
+    enableNotification(): void {
         LocalNotifications.hasPermission()
         LocalNotifications.schedule([
             {
